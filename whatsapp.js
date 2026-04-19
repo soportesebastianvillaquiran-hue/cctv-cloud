@@ -20,7 +20,15 @@ async function iniciarWhatsApp() {
     const sock = makeWASocket({
         version,
         auth: state,
-        browser: Browsers.windows("Chrome")
+        printQRInTerminal: false,
+        browser: Browsers.windows("Desktop"),
+        markOnlineOnConnect: false,
+        syncFullHistory: false,
+        keepAliveIntervalMs: 30000,
+        connectTimeoutMs: 60000,
+        defaultQueryTimeoutMs: 60000,
+        generateHighQualityLinkPreview: false
+
     })
 
     sockGlobal = sock
